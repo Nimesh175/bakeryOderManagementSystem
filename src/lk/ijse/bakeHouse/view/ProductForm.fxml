@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="paneDashboard" prefHeight="690.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.bakeHouse.controller.ProductFormController">
+   <children>
+      <SplitPane dividerPositions="0.2694717994628469" layoutX="78.0" layoutY="67.0" prefHeight="620.0" prefWidth="1121.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="76.0" AnchorPane.topAnchor="65.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="625.0" prefWidth="298.0" style="-fx-background-color: linear-gradient(to bottom, #3366ff -4%, #99ccff 112%);">
+               <children>
+                  <JFXTextField fx:id="txtName" focusColor="#060606" labelFloat="true" layoutX="28.0" layoutY="240.0" prefHeight="25.0" prefWidth="274.0" promptText="Product Name*" style="-fx-background-color: white; -fx-background-radius: 5;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtUnitPrice" focusColor="#060606" labelFloat="true" layoutX="28.0" layoutY="320.0" prefHeight="25.0" prefWidth="274.0" promptText="Unit Price*" style="-fx-background-color: white; -fx-background-radius: 5;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label fx:id="lblID" alignment="CENTER" layoutX="28.0" layoutY="200.0" prefHeight="25.0" prefWidth="274.0" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="ASDFG" textAlignment="CENTER" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <font>
+                        <Font name="Serif Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <ToggleButtonGroup fx:id="toggleGroupWeight" layoutX="41.0" layoutY="430.0" prefHeight="17.0" prefWidth="194.0" selectionType="SINGLE" AnchorPane.leftAnchor="12.0">
+                     <toggles>
+                        <RadioButton fx:id="rationButtonGrams" mnemonicParsing="false" prefHeight="17.0" prefWidth="86.0" text="grams">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="rationButtonKiloGrams" mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="kilogram">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="15.0" />
+                           </font>
+                        </RadioButton>
+                     </toggles>
+                  </ToggleButtonGroup>
+                  <Label layoutX="28.0" layoutY="400.0" text="Weight*" textFill="#fc0606" AnchorPane.leftAnchor="10.0">
+                     <font>
+                        <Font name="Serif Regular" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comboType" editable="true" layoutX="28.0" layoutY="280.0" prefHeight="25.0" prefWidth="274.0" promptText="Product Type*" style="-fx-border-radius: 5;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="94.0" layoutY="30.0">
+                     <image>
+                        <Image url="@../assests/32376-pancakes-icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="129.0" layoutY="47.0">
+                     <image>
+                        <Image url="@../assests/hamburger-icon.png" />
+                     </image>
+                  </ImageView>
+                  <JFXTextField fx:id="txtGrossWeight" focusColor="#060606" labelFloat="true" layoutX="28.0" layoutY="470.0" prefHeight="25.0" prefWidth="274.0" promptText="Gross Weight*" style="-fx-background-color: white; -fx-background-radius: 5;" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="btnSaveAndUpdate" buttonType="RAISED" layoutX="-10.0" layoutY="565.0" onAction="#btnSaveUpdateAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #019638;" text="SAVE" textFill="WHITE" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <ripplerFill>
+                        <RadialGradient centerX="1.0" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#00ff40" />
+                              <Stop color="#00ff40" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <Separator layoutX="29.0" layoutY="380.0" prefHeight="3.0" prefWidth="266.0" style="-fx-background-color: BLUE;" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="18.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: white;">
+               <children>
+                  <JFXComboBox fx:id="comboSelectField" labelFloat="true" layoutX="380.0" layoutY="25.0" opacity="0.8" prefHeight="25.0" prefWidth="143.0" promptText="Select Field Name" style="-jfx-focus-color: #ff9999;" unFocusColor="#019638a8" visibleRowCount="5" AnchorPane.rightAnchor="313.0" />
+                  <JFXButton fx:id="btnEdit" buttonType="RAISED" layoutX="93.0" layoutY="561.0" onAction="#editButtonAction" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #0080ff;" text="EDIT" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <ripplerFill>
+                        <RadialGradient centerX="1.0" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#7300ff" />
+                              <Stop color="#7300ff" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="293.0" layoutY="561.0" onAction="#deleteButtonAction" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ff3333;" text="DELETE" textFill="WHITE" AnchorPane.leftAnchor="293.0">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <ripplerFill>
+                        <RadialGradient centerX="1.0" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="RED" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <Separator layoutX="266.0" layoutY="559.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="4.0" />
+                  <JFXButton fx:id="btnGoToRecipe" buttonType="RAISED" layoutX="627.0" layoutY="561.0" onAction="#goToRecipeForm" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to bottom, #ffff00 0%, #ffff66 100%); -fx-border-color: linear-gradient(to bottom, #ffff00 0%, #ffff66 100%);" text=" ADD RECIPE   " AnchorPane.rightAnchor="27.0">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                     <ripplerFill>
+                        <RadialGradient centerX="1.0" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#ff5800" />
+                              <Stop color="#ff5800" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <Pane layoutX="480.0" layoutY="23.0" prefHeight="30.0" prefWidth="282.0" style="-fx-background-color: #019638; -fx-background-radius: 5;" AnchorPane.rightAnchor="17.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@../assests/MetroUI-Other-Search-icon.png" />
+                           </image>
+                        </ImageView>
+                        <JFXTextField fx:id="txtSearch" focusColor="#00f804" layoutX="30.0" layoutY="2.0" onKeyReleased="#searchBarWithTable" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #b3b3ff; -fx-border-radius: 10;" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font name="Mongolian Baiti" size="14.0" />
+                           </font>
+                           <effect>
+                              <DropShadow height="10.0" radius="4.5" width="10.0" />
+                           </effect>
+                        </JFXTextField>
+                     </children>
+                  </Pane>
+                  <TableView fx:id="tableViewProduct" layoutX="92.0" layoutY="112.0" prefHeight="415.0" prefWidth="622.0" AnchorPane.leftAnchor="92.0" AnchorPane.rightAnchor="100.0">
+                    <columns>
+                      <TableColumn fx:id="columnProductID" prefWidth="100.0" text="Product ID" />
+                      <TableColumn fx:id="coloumnName" prefWidth="120.0" text="Product Name" />
+                        <TableColumn fx:id="coloumnType" prefWidth="120.0" text="Product Type" />
+                        <TableColumn fx:id="columnPrice" prefWidth="100.0" text="Unit Price" />
+                        <TableColumn fx:id="coloumnWeight" prefWidth="100.0" text="Weight" />
+                        <TableColumn fx:id="columnWeightUnit" prefWidth="90.0" text="Unit" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <Pane layoutX="20.0" layoutY="20.0" prefHeight="570.0" prefWidth="75.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton id="dashNavs" layoutY="453.0" onAction="#goBackLogIn" prefHeight="60.0" prefWidth="75.0" stylesheets="@../style/dashboardStyles.css" textFill="TRANSPARENT" />
+            <JFXButton id="dashNavs" layoutY="393.0" onAction="#goBackPayment" prefHeight="60.0" prefWidth="75.0" stylesheets="@../style/dashboardStyles.css" textFill="TRANSPARENT" />
+            <JFXButton id="dashNavs" layoutY="335.0" onAction="#goBackOrder" prefHeight="60.0" prefWidth="75.0" stylesheets="@../style/dashboardStyles.css" textFill="TRANSPARENT" />
+            <JFXButton id="dashNavs" layoutY="215.0" onAction="#goBacKHome" prefHeight="60.0" prefWidth="75.0" stylesheets="@../style/dashboardStyles.css" textFill="TRANSPARENT" />
+            <JFXButton id="dashNavs" layoutY="275.0" onAction="#goBackCustomer" prefHeight="60.0" prefWidth="75.0" stylesheets="@../style/dashboardStyles.css" text="Button" textFill="TRANSPARENT" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="23.0" layoutY="285.0" opacity="0.8">
+               <image>
+                  <Image url="@../assests/Users-icon.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" layoutX="18.0" layoutY="12.0" stroke="#2b08f2" strokeType="OUTSIDE" width="40.0" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="18.0" layoutY="12.0">
+               <image>
+                  <Image url="@../assests/Untitled.jpg" />
+               </image>
+            </ImageView>
+            <Separator layoutX="5.0" layoutY="63.0" prefWidth="65.0" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="23.0" layoutY="225.0" opacity="0.9">
+               <image>
+                  <Image url="@../assests/Home-icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="21.0" layoutY="345.0" opacity="0.8">
+               <image>
+                  <Image url="@../assests/Ecommerce-Shopping-Cart-icon%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="25.0" layoutX="23.0" layoutY="465.0" opacity="0.9">
+               <image>
+                  <Image url="@../assests/Login-out-icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="23.0" layoutY="405.0">
+               <image>
+                  <Image url="@../assests/payments-icon.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane layoutX="85.0" layoutY="10.0" opacity="0.9" prefHeight="65.0" prefWidth="1005.0" style="-fx-background-color: linear-gradient(to right top, #873061, #bc124d, #dd1818);" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="lblTimeDate" alignment="CENTER_RIGHT" layoutX="853.0" layoutY="17.0" opacity="0.8" prefHeight="30.0" prefWidth="245.0" text="2020-01-01  00:00:01  AM" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="22.0" />
+               </font>
+            </Label>
+            <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="33.0" radius="27.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="29.0" layoutY="13.0">
+               <image>
+                  <Image url="@../assests/gangster-man-icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblHi" layoutX="93.0" layoutY="9.0" opacity="0.8" text="Hi," textFill="WHITE">
+               <font>
+                  <Font name="Ebrima" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblUserFullName" layoutX="91.0" layoutY="30.0" opacity="0.8" prefHeight="24.0" prefWidth="250.0" text="Dinuka Nimesh" textFill="WHITE">
+               <font>
+                  <Font name="Ebrima" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

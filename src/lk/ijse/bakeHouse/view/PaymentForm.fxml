@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="paneDashboard" prefHeight="690.0" prefWidth="1200.0" style="-fx-background-color: #f2f2f290%  #e6e6e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.bakeHouse.controller.PaymentFormController">
+   <children>
+      <ImageView fitHeight="626.0" fitWidth="1125.0" focusTraversable="true" layoutX="75.0" layoutY="64.0" opacity="0.7" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
+         <image>
+            <Image url="@../assests/image-asset.jpeg" />
+         </image>
+         <effect>
+            <InnerShadow blurType="TWO_PASS_BOX" height="0.0" radius="2.0" width="10.0" />
+         </effect>
+      </ImageView>
+      <Pane layoutX="147.0" layoutY="148.0" prefHeight="416.0" prefWidth="231.0" style="-fx-background-color: #ffe6ff; -fx-background-radius: 10;" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="148.0">
+         <children>
+            <TableView fx:id="tblCustomer" layoutX="8.0" layoutY="9.0" prefHeight="397.0" prefWidth="215.0">
+              <columns>
+                <TableColumn fx:id="columnCustID" text="Customer ID" />
+                <TableColumn fx:id="columnCustName" prefWidth="130.0" text="Customer Name" />
+              </columns>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane layoutX="422.0" layoutY="149.0" opacity="0.8" prefHeight="416.0" prefWidth="438.0" style="-fx-background-color: #ffb3b3; -fx-background-radius: 10;" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="149.0">
+         <children>
+            <TableView fx:id="tblOrders" layoutX="8.0" layoutY="9.0" prefHeight="397.0" prefWidth="419.0">
+               <columns>
+                  <TableColumn fx:id="columnOrdersUserName" text="User Name" />
+                  <TableColumn fx:id="columnOrdersOrderID" prefWidth="70.0" text="Order ID" />
+                  <TableColumn fx:id="columnOrdersOrderDate" prefWidth="140.0" text="Order Date" />
+                  <TableColumn fx:id="columnOrdersPayment" prefWidth="70.0" text="Payment" />
+                  <TableColumn fx:id="columnOrdersStatus" prefWidth="60.0" text="Status" />
+               </columns>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane layoutX="885.0" layoutY="149.0" opacity="0.8" prefHeight="416.0" prefWidth="231.0" style="-fx-background-color: #ffb3b3; -fx-background-radius: 10;" AnchorPane.leftAnchor="810.0">
+         <children>
+            <TableView fx:id="tblOrderItems" layoutX="8.0" layoutY="9.0" prefHeight="397.0" prefWidth="215.0">
+               <columns>
+                  <TableColumn fx:id="columnItemName" prefWidth="130.0" text="Item Name" />
+                  <TableColumn fx:id="columnItemQTY" text="QTY" />
+               </columns>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane layoutX="367.0" layoutY="578.0" opacity="0.9" prefHeight="80.0" prefWidth="919.0" style="-fx-background-color: #cc99ff; -fx-background-radius: 10;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="161.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Label layoutX="20.0" layoutY="29.0" text="Customer Name:">
+               <font>
+                  <Font name="Serif Bold Italic" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="380.0" layoutY="30.0" text="Order ID:">
+               <font>
+                  <Font name="Serif Bold Italic" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCustomerName" alignment="CENTER" layoutX="176.0" layoutY="29.0" prefHeight="24.0" prefWidth="161.0" text="-" textAlignment="CENTER" textFill="#010139">
+               <font>
+                  <Font name="Serif Bold Italic" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblOrderID" alignment="CENTER" layoutX="476.0" layoutY="30.0" prefHeight="24.0" prefWidth="91.0" text="-" textFill="#010139">
+               <font>
+                  <Font name="Serif Bold Italic" size="21.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="checkBoxPaid" layoutX="583.0" layoutY="12.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="147.0" text="PAID" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </CheckBox>
+            <JFXButton fx:id="btnPaymentSubmit" buttonType="RAISED" layoutX="705.0" layoutY="8.0" onAction="#btnSaveUpdateAction" prefHeight="60.0" prefWidth="202.0" style="-fx-background-color: #00ff00; -fx-background-radius: 10; -fx-border-color: #66ff33; -fx-border-radius: 10;" text="PAYMENT SUBMIT " textFill="#070707">
+               <font>
+                  <Font name="Serif Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="1050.0" layoutY="77.0" prefHeight="182.0" prefWidth="138.0" style="-fx-border-color: red;" AnchorPane.leftAnchor="1052.0" AnchorPane.rightAnchor="12.0" />
+      <JFXButton fx:id="btnSearchPaidAll" buttonType="RAISED" layoutX="1059.0" layoutY="143.0" onAction="#buttonSearchPaidAllAction" prefHeight="45.0" prefWidth="122.0" style="-fx-background-color: #0066cc;" text="PAID ALL" textFill="WHITE" AnchorPane.leftAnchor="1059.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="143.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSearchUn_paidAll" buttonType="RAISED" layoutX="1059.0" layoutY="203.0" onAction="#buttonSearchUnPaidAllAction" prefHeight="45.0" prefWidth="122.0" style="-fx-background-color: #004080;" text="UNPAID ALL" textFill="WHITE" AnchorPane.leftAnchor="1059.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="203.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="1058.0" layoutY="96.0" onAction="#buttonSearchAllAction" prefHeight="45.0" prefWidth="122.0" style="-fx-background-color: #1a8cff;" text="SEARCH ALL" textFill="WHITE" AnchorPane.leftAnchor="1059.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="85.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Pane layoutX="1050.0" layoutY="255.0" prefHeight="139.0" prefWidth="138.0" style="-fx-border-color: red;" AnchorPane.leftAnchor="1052.0" AnchorPane.rightAnchor="12.0" />
+      <JFXButton fx:id="btnDeletePaidAll" buttonType="RAISED" layoutX="1059.0" layoutY="335.0" onAction="#deletePaidAllOrderButtonAction" prefHeight="45.0" prefWidth="122.0" style="-fx-background-color: #ff1a1a;" text="PAID ALL" textFill="WHITE" AnchorPane.leftAnchor="1059.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="333.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="SansSerif Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="585.0" layoutY="99.0" text="From">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="826.0" layoutY="99.0" text="To">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="1059.0" layoutY="276.0" onAction="#deleteOrderButtonAction" prefHeight="45.0" prefWidth="122.0" style="-fx-background-color: #ff4d4d;" text="DELETE" textFill="WHITE" AnchorPane.leftAnchor="1059.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="273.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Pane layoutX="20.0" layoutY="20.0" prefHeight="570.0" prefWidth="75.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton id="dashNavs" layoutY="335.0" onAction="#goBackOrder" prefHeight="60.0" prefWidth="75.0" stylesheets="@../style/dashboardStyles.css" textFill="TRANSPARENT" />
+            <JFXButton id="dashNavs" layoutY="275.0" onAction="#goBackCustomer" prefHeight="60.0" prefWidth="75.0" stylesheets="@../style/dashboardStyles.css" text="Button" textFill="TRANSPARENT" />
+            <JFXButton id="dashNavs" layoutY="215.0" onAction="#goBacKHome" prefHeight="60.0" prefWidth="75.0" stylesheets="@../style/dashboardStyles.css" textFill="TRANSPARENT" />
+            <JFXButton id="dashNavs" layoutY="393.0" onAction="#goBackPayment" prefHeight="60.0" prefWidth="75.0" stylesheets="@../style/dashboardStyles.css" textFill="TRANSPARENT" />
+            <JFXButton id="dashNavs" layoutY="453.0" onAction="#goBackLogIn" prefHeight="60.0" prefWidth="75.0" stylesheets="@../style/dashboardStyles.css" textFill="TRANSPARENT" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" layoutX="18.0" layoutY="12.0" stroke="#2b08f2" strokeType="OUTSIDE" width="40.0" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="18.0" layoutY="12.0">
+               <image>
+                  <Image url="@../assests/Untitled.jpg" />
+               </image>
+            </ImageView>
+            <Separator layoutX="5.0" layoutY="63.0" prefWidth="65.0" />
+            <ImageView fitHeight="30.0" fitWidth="25.0" layoutX="23.0" layoutY="465.0" opacity="0.9">
+               <image>
+                  <Image url="@../assests/Login-out-icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="23.0" layoutY="405.0">
+               <image>
+                  <Image url="@../assests/payments-icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="23.0" layoutY="225.0" opacity="0.9">
+               <image>
+                  <Image url="@../assests/Home-icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="23.0" layoutY="285.0" opacity="0.8">
+               <image>
+                  <Image url="@../assests/Users-icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="21.0" layoutY="345.0" opacity="0.8">
+               <image>
+                  <Image url="@../assests/Ecommerce-Shopping-Cart-icon%20(1).png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane layoutX="85.0" layoutY="10.0" opacity="0.9" prefHeight="65.0" prefWidth="1005.0" style="-fx-background-color: linear-gradient(to right top, #873061, #bc124d, #dd1818);" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="lblTimeDate" alignment="CENTER_RIGHT" layoutX="853.0" layoutY="17.0" opacity="0.8" prefHeight="30.0" prefWidth="245.0" text="2020-01-01  00:00:01  AM" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="22.0" />
+               </font>
+            </Label>
+            <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="33.0" radius="27.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="29.0" layoutY="13.0">
+               <image>
+                  <Image url="@../assests/gangster-man-icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblHi" layoutX="93.0" layoutY="9.0" opacity="0.8" text="Hi," textFill="WHITE">
+               <font>
+                  <Font name="Ebrima" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblUserFullName" layoutX="91.0" layoutY="30.0" opacity="0.8" prefHeight="24.0" prefWidth="250.0" text="Dinuka Nimesh" textFill="WHITE">
+               <font>
+                  <Font name="Ebrima" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TextField fx:id="txtLabelToDate" layoutX="857.0" layoutY="95.0" prefHeight="25.0" prefWidth="181.0">
+         <font>
+            <Font name="Arial Bold Italic" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtLabelFromDate" editable="false" layoutX="629.0" layoutY="95.0" prefHeight="25.0" prefWidth="181.0">
+         <font>
+            <Font name="Arial Bold Italic" size="14.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="btnRefrechCustomer" buttonType="RAISED" layoutX="1058.0" layoutY="453.0" onAction="#refreshCustomerTableAction" prefHeight="45.0" prefWidth="122.0" ripplerFill="#511212" style="-fx-background-color: YELLOW;" text="REFRESH" textFill="#2c2626">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Dungeon" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

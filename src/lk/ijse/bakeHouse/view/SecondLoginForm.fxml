@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="paneDashboard" prefHeight="690.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(to right top, #333333, #523956, #873061, #bc124d, #dd1818);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.bakeHouse.controller.LoginAndSignupFormController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="paneAnchor" layoutX="228.0" layoutY="84.0" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to right top, #333333, #523956, #873061, #bc124d, #dd1818); -fx-border-color: red;" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <AnchorPane fx:id="signUpAnchor" prefHeight="458.0" prefWidth="723.0" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="415.0" fitWidth="325.0" layoutX="357.0" layoutY="22.0" opacity="0.7" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
+                     <image>
+                        <Image url="@../assests/818643-amazing-bakery-wallpapers-1920x1200-picture.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <AnchorPane fx:id="paneSignUp" layoutX="14.0" layoutY="29.0" prefHeight="415.0" prefWidth="325.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-width: 3; -fx-border-color: red;" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="29.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="138.0" layoutY="42.0">
+                           <image>
+                              <Image url="@../assests/user-add-icon.png" />
+                           </image>
+                        </ImageView>
+                        <JFXTextField fx:id="fNameTxt" focusColor="#0bc8f8" layoutX="14.0" layoutY="125.0" opacity="0.8" prefHeight="30.0" prefWidth="135.0" promptText="First Name*">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="lNameTxt" focusColor="#0bc8f8" layoutX="176.0" layoutY="125.0" opacity="0.8" prefHeight="30.0" prefWidth="135.0" promptText="Last Name">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXComboBox fx:id="roleCombo" focusColor="#0bc8f8" layoutX="14.0" layoutY="165.0" opacity="0.8" prefHeight="25.0" prefWidth="297.0" promptText="What's Your Role?*" style="-jfx-focus-color: #0bc8f8;" unFocusColor="#4d4d4d" />
+                        <JFXPasswordField fx:id="newPassTxT" focusColor="#0bc8f8" layoutX="14.0" layoutY="200.0" opacity="0.8" prefHeight="25.0" prefWidth="297.0" promptText="New Password*">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXPasswordField fx:id="confirmPassTxt" focusColor="#0bc8f8" layoutX="14.0" layoutY="235.0" opacity="0.8" prefHeight="25.0" prefWidth="297.0" promptText="Confirm Password*">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXPasswordField fx:id="adminPassTxt" focusColor="#09d4f8" layoutX="15.0" layoutY="270.0" opacity="0.8" prefHeight="25.0" prefWidth="297.0" promptText="Admin Password*">
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXButton fx:id="signUpBtn" buttonType="RAISED" layoutX="15.0" layoutY="330.0" onAction="#saveUserDetail" prefHeight="25.0" prefWidth="297.0" style="-fx-background-color: yellow;" text="Sign Up">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font name="Serif Bold Italic" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <Pane fx:id="paneNotify" layoutX="13.0" layoutY="40.0" opacity="0.8" prefHeight="320.0" prefWidth="300.0" style="-fx-background-color: #00ff00; -fx-border-color: #00ff00; -fx-border-width: 3;" visible="false">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <children>
+                              <Text layoutX="51.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN INFORMATION">
+                                 <font>
+                                    <Font name="Serif Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="23.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID    :">
+                                 <font>
+                                    <Font name="Serif Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="23.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password :">
+                                 <font>
+                                    <Font name="Serif Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="txtUserNotify" layoutX="92.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="user" textAlignment="CENTER" wrappingWidth="188.13671135902405">
+                                 <font>
+                                    <Font name="System Italic" size="17.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="txtPassNotify" layoutX="92.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="user" textAlignment="CENTER" wrappingWidth="188.13671875">
+                                 <font>
+                                    <Font name="System Italic" size="17.0" />
+                                 </font>
+                              </Text>
+                              <JFXButton fx:id="btnNotify" buttonType="RAISED" layoutX="62.0" layoutY="235.0" onMouseClicked="#reCreateAnotherAccountBack" prefHeight="26.0" prefWidth="177.0" style="-fx-background-color: yellow;" text="Back" textFill="#171717">
+                                 <effect>
+                                    <DropShadow blurType="TWO_PASS_BOX" color="#a9d91ac9" height="30.0" radius="14.5" spread="0.14" width="30.0" />
+                                 </effect>
+                                 <font>
+                                    <Font name="Serif Bold Italic" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </Pane>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </AnchorPane>
+                  <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="466.0" layoutY="282.0" onMouseClicked="#loginMouseClicked" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: yellow;" text="Log In">
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX" color="#a9d91ac9" height="30.0" radius="14.5" spread="0.14" width="30.0" />
+                     </effect>
+                     <font>
+                        <Font name="Serif Bold Italic" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="387.0" layoutY="139.0" opacity="0.9" style="-fx-text-fill: white;" text="Wickrama Bake">
+                     <font>
+                        <Font name="Serif Bold Italic" size="40.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label layoutX="466.0" layoutY="205.0" opacity="0.9" style="-fx-text-fill: white;" text="House">
+                     <font>
+                        <Font name="Serif Bold Italic" size="40.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="logInAnchor" layoutX="2.0" layoutY="2.0" prefHeight="450.0" prefWidth="700.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+               <children>
+                  <AnchorPane layoutX="348.0" layoutY="69.0" prefHeight="320.0" prefWidth="300.0" style="-fx-background-color: white;">
+                     <children>
+                        <JFXTextField fx:id="txtUName" labelFloat="true" layoutX="37.0" layoutY="102.0" opacity="0.9" prefHeight="25.0" prefWidth="232.0" promptText="User Name">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="37.0" layoutY="155.0" opacity="0.9" prefHeight="25.0" prefWidth="232.0" promptText="Password">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <ImageView fitHeight="82.0" fitWidth="80.0" layoutX="113.0" layoutY="14.0">
+                           <image>
+                              <Image url="@../assests/gangster-man-icon.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="btnLoginToDashBoard" buttonType="RAISED" layoutX="37.0" layoutY="236.0" onAction="#welcomeToDashboard" prefHeight="25.0" prefWidth="232.0" style="-fx-background-color: #d2d90f;" text="LOG IN">
+                           <font>
+                              <Font name="Serif Bold" size="14.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assests/Login-in-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </AnchorPane>
+                  <ImageView fitHeight="415.0" fitWidth="325.0" layoutX="18.0" layoutY="26.0" opacity="0.7" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="26.0">
+                     <image>
+                        <Image url="@../assests/100%25%20max.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow spread="0.01" />
+                     </effect>
+                  </ImageView>
+                  <Label layoutX="101.0" layoutY="120.0" opacity="0.9" style="-fx-text-fill: white;" text="Hello,">
+                     <font>
+                        <Font name="Serif Bold Italic" size="40.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label layoutX="29.0" layoutY="175.0" opacity="0.9" style="-fx-text-fill: white;" text="Welcome Back">
+                     <font>
+                        <Font name="Serif Bold Italic" size="40.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <JFXButton fx:id="btnSignUp" buttonType="RAISED" layoutX="89.0" layoutY="258.0" onMouseClicked="#signupMousceClicked" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #d2d90f;" text="SIGN UP">
+                     <font>
+                        <Font name="Serif Bold" size="14.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <Label layoutX="440.0" layoutY="434.0" prefHeight="17.0" prefWidth="240.0" text="|    Software Developed by Dinuka Nimesh" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="17.0" fitWidth="80.0" layoutX="347.0" layoutY="434.0">
+               <image>
+                  <Image url="@../assests/images.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>
